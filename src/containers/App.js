@@ -10,7 +10,10 @@ import Row from "react-bootstrap/Row";
 function App() {
   const [item, setItem] = useState([]);
 
+  // adding a new item to the item state from CreateTodoItem
   const addToDoListItem = (todo) => setItem([...item, todo.enteredItem]);
+
+  // deleting item from the curent state...invoked by ToDoList
   const deleteTodoListItem = (index) => {
     if(index !== -1) {
       item.splice(index, 1);

@@ -10,11 +10,6 @@ const ToDoList = ((props) => {
 
   const items = [...props.todoItem];
 
-  // function alertClicked(index) {
-  //   console.log(items);
-  //   items.splice(1, index);
-  // }
-
   const listItems = items.map((item, index) => {
     return (
         <ListGroup.Item key={index} action onClick={() => props.onDeleteItem(index)}>
