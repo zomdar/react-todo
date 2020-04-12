@@ -29,7 +29,7 @@ const CreateToDoItem = ((props) => {
           onChange={(event) => setEnteredItem(event.target.value)}
         />
         <InputGroup.Append>
-          <Button variant="outline-secondary" onClick={submitToDoList}>
+          <Button variant="outline-secondary" onClick={submitToDoList} disabled={!enteredItem.length}>
             Submit
           </Button>
         </InputGroup.Append>
