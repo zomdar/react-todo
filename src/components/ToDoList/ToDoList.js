@@ -1,26 +1,33 @@
-import React, { useState } from 'react';
+import React from "react";
 
-import Row from 'react-bootstrap/Row';
-import ListGroup from 'react-bootstrap/ListGroup';
+import Row from "react-bootstrap/Row";
+import ListGroup from "react-bootstrap/ListGroup";
+import Button from "react-bootstrap/Button";
 
+import "./ToDoList.scss";
 
-import './ToDoList.scss';
+const ToDoList = ((props) => {
 
-const ToDoList = React.memo(props => {
+  const items = [...props.todoItem];
+
+  // function alertClicked(index) {
+  //   console.log(items);
+  //   items.splice(1, index);
+  // }
+
+  const listItems = items.map((item, index) => {
+    return (
+        <ListGroup.Item key={index} action onClick={() => props.onDeleteItem(index)}>
+          {item}
+        </ListGroup.Item>
+    )
+  })
 
   return (
     <Row>
-        <ListGroup defaultActiveKey="#link1">
-          <ListGroup.Item action href="#link1">
-            {props.todoItem}
-          </ListGroup.Item>
-          <ListGroup.Item action href="#link2">
-            Link 2
-          </ListGroup.Item>
-          <ListGroup.Item action href="#link3">
-            This one is a button
-          </ListGroup.Item>
-        </ListGroup>
+      <ListGroup>
+          {listItems}
+      </ListGroup>
     </Row>
   );
 });
