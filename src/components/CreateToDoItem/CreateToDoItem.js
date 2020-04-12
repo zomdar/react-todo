@@ -12,8 +12,7 @@ const CreateToDoItem = React.memo(props => {
 
     const submitToDoList = event => {
         event.preventDefault();
-        props.onAddToDoListItem({ item: enteredItem })
-        console.log(enteredItem);
+        props.onAddToDoListItem({ enteredItem });
     }
 
     return (

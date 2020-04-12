@@ -12,7 +12,7 @@ function App() {
 
   const [item, setItem] = useState('');
 
-  const addToDoListItem = () => console.log();
+  const addToDoListItem = (todo) => setItem(todo);
 
   return (
     <Container>
@@ -21,7 +21,8 @@ function App() {
       <Row>
         <h1>To Do List</h1>
       </Row>
-      <ToDoList></ToDoList>
+      <ToDoList
+        todoItem={item}></ToDoList>
     </Container>
   )
 }

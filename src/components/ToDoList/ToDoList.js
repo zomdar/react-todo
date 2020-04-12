@@ -12,7 +12,7 @@ const ToDoList = React.memo(props => {
     <Row>
         <ListGroup defaultActiveKey="#link1">
           <ListGroup.Item action href="#link1">
-            hey hey hey hey hey heyhey hey hey heyhey heyhey hey
+            {props.todoItem}
           </ListGroup.Item>
           <ListGroup.Item action href="#link2">
             Link 2
